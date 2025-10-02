@@ -5,9 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class SkyshopApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(SkyshopApplication.class, args);
-	}
-
+    // for Example url: http://localhost:8080/search?pattern=apples
+    public static void main(String[] args) {
+        SpringApplication.run(SkyshopApplication.class, args);
+    }
 }
