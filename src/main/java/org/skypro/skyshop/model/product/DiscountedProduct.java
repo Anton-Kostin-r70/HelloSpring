@@ -17,7 +17,6 @@ public class DiscountedProduct extends Product {
         }
         this.basePrice = basePrice;
         this.discountedPercent = discountedPercent;
-        product = DISCOUNTED_PRODUCT;
     }
 
     @Override
@@ -33,5 +32,10 @@ public class DiscountedProduct extends Product {
     @Override
     public boolean isSpecial() {
         return true;
+    }
+
+    @Override
+    public String getContentType() {
+        return DISCOUNTED_PRODUCT;
     }
 }

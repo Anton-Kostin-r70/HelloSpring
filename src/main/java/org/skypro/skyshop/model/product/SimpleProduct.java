@@ -12,7 +12,6 @@ public class SimpleProduct extends Product {
             throw new IllegalArgumentException("Цена на товар не может быть отрицательной или равной нулю");
         }
         this.price = price;
-        product = SIMPLE_PRODUCT;
     }
 
     @Override
@@ -28,5 +27,10 @@ public class SimpleProduct extends Product {
     @Override
     public boolean isSpecial() {
         return false;
+    }
+
+    @Override
+    public String getContentType() {
+        return SIMPLE_PRODUCT;
     }
 }

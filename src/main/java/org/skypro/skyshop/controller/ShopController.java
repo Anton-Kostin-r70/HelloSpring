@@ -17,7 +17,6 @@ public class ShopController {
     private final StorageService storageServ;
     private final SearchService searchServ;
 
-    @Autowired
     public ShopController(StorageService storageServ, SearchService searchServ) {
         this.storageServ = storageServ;
         this.searchServ = searchServ;

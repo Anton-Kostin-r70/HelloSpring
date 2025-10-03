@@ -7,9 +7,9 @@ import java.util.Objects;
 import java.util.UUID;
 
 public abstract class Product implements Searchable, Comparable<Searchable> {
-    private String title;
+    private final String title;
     private final UUID id;
-    protected String product = "PRODUCT";
+    protected String type = "PRODUCT";
 
     public abstract boolean isSpecial();
 
@@ -17,10 +17,7 @@ public abstract class Product implements Searchable, Comparable<Searchable> {
         if (title == null || title.isBlank()) {
             throw new IllegalArgumentException("Вносимые сведения о товаре не корректны");
         }
-        if (id == null || id.toString().isEmpty()) {
-            throw new IllegalArgumentException("Проверьте генератор Id");
-        }
-        this.title = title.trim();
+        this.title = title;
         this.id = id;
     }
 
@@ -37,7 +34,7 @@ public abstract class Product implements Searchable, Comparable<Searchable> {
 
     @JsonIgnore
     public String getContentType() {
-        return product;
+        return type;
     }
 
     public String getProductName() {
@@ -45,7 +42,7 @@ public abstract class Product implements Searchable, Comparable<Searchable> {
     }
 
     public String getStringRepresentation() {
-        return this != null ? getTitle() + " - " + product : "";
+        return this != null ? getTitle() + " - " + getContentType() : "";
     }
 
     @Override

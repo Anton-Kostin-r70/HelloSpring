@@ -13,12 +13,8 @@ public class Article implements Searchable, Comparable<Searchable> {
     private final UUID id;
 
     public Article(String title, String description, UUID id) {
-        if (title == null || title.trim().length() == 0 || description == null || description.trim().length() == 0
-                || id.toString().isEmpty()) {
+        if (title == null || title.isBlank() || description == null || description.isBlank()) {
             throw new IllegalArgumentException("Проверьте вносимые сведения в описании");
-        }
-        if (id == null || id.toString().isEmpty()) {
-            throw new IllegalArgumentException("Проверьте генератор Id");
         }
         this.title = title;
         this.description = description;
